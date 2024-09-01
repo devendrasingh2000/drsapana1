@@ -101,7 +101,14 @@ if(isset($_GET['id'])){
                         <td><?php echo $row['meta_keyword']; ?></td>
                         <td><?php echo $row['meta_description']; ?></td>
                         <td><img src="images/<?php echo $row['picture_image']; ?>" height="50" alt="Image"></td>
-                        <td><?php echo $row['status']; ?></td>
+                        <td><?php
+                            if ($row['status'] == 1) {
+                               echo "active";
+                            } elseif ($row['status'] == 2) {
+                            echo "inactive";
+                            }
+                            ?>
+                        </td>
                         <td> <a href="page_edit.php?editid=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
                              <a href="?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick =" javascript:return confirm(' Are You Sure to Delete this ');" >Delete</a>
                         </td>

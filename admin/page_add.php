@@ -5,7 +5,6 @@ if(!isset($_SESSION['username'])){
   header('location:../login.php');
 }
 if(isset($_POST['submit'])){
-    // Escape user inputs for security
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $status = mysqli_real_escape_string($conn, $_POST['status']);
     $meta_title = mysqli_real_escape_string($conn, $_POST['meta_title']);
